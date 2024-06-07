@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .login-container {
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #000;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .login-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="authenticate()">Login</button>
+        <div id="message" class="message"></div>
+    </div>
+    <script>
+        function authenticate() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+
+            // Hardcoded credentials for demonstration purposes
+            const validUsername = 'user';
+            const validPassword = 'password';
+
+            if (username === validUsername && password === validPassword) {
+                message.textContent = 'Login successful!';
+                message.className = 'message success';
+            } else {
+                message.textContent = 'Invalid username or password';
+                message.className = 'message error';
+            }
+        }
+    </script>
+</body>
+</html>
